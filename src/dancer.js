@@ -53,15 +53,10 @@
 // };
 
 
-
-
-
-
-
 class Dancer {
   constructor(top, left, timeBetweenSteps) {
     this.$node = $('<span class="dancer"></span>');
-    this.top = top;
+    this.top = top > 50 ? top : 50;
     this.left = left;
     this.timeBetweenSteps = timeBetweenSteps;
     this.step();
@@ -83,10 +78,12 @@ class Dancer {
 }
 
 
+// let newDancer = new BlinckyDancer(1, 2, 1000);
 
-
-
-
-
-
+// {   
+//   node: '<span class="dancer"></span>'.
+//   top, 1
+//   left, 2
+//   timeBetweenSteps: 1000,
+// }
 

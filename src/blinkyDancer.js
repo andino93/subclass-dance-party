@@ -33,10 +33,21 @@
 
 class BlinkyDancer extends Dancer {
   constructor(top, left, timeBetweenSteps) {
-    super(top, left, timeBetweenSteps);
+    super(top, left, timeBetweenSteps);    
   }
-  step () {
+  step() {
     Dancer.prototype.step.call(this);
     this.$node.toggle();
   }
+  makeALine(index) {
+    this.setPosition((index * 10) + 50, 50);
+  }
+  split(index) {
+    this.setPosition(((index) * 10) + 50, 1000);
+  }
 }  
+
+
+
+
+

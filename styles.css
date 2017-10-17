@@ -17,7 +17,7 @@ body, a:link, a:visited, a:active{
   /*background will be 1600x900 so that will also be the window size limit*/
 
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .makeALine, .letsDoTheSplits{
   padding:5px 12px;
   float:right;
 }
