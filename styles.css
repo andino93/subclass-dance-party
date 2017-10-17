@@ -29,7 +29,54 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  /*border:10px solid red;*/
   border-radius:10px;
   position:absolute;
 }
+.blinkyDancer {
+  width: 0px;
+  height: 0px;
+  border-right: 60px solid transparent;
+  border-top: 60px solid yellow;
+  border-left: 60px solid yellow;
+  border-bottom: 60px solid yellow;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  
+  
+}
+
+.veggies {
+  display:block;
+  width: 60px;
+  height: 90px;
+  background-color: green;
+  -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+  border-radius: 50%  50%  50%  50%  / 60%   60%   40%  40%;
+}
+
+.relative {
+  width: 1000px;
+  position: relative;
+}
+.bounce {
+  position: absolute;
+  top: 0;
+  animation-duration: 1s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes bounce {
+  from {
+    padding-top: 0px;
+  }
+
+  to {
+    padding-top: 20px;
+    }
+  }
+

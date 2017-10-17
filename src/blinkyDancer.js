@@ -18,34 +18,30 @@
 //   return blinkyDancer;
 // };
 
-// const BlinkyDancer = function(top, left, timeBetweenSteps) {
-//   Dancer.call(this, top, left, timeBetweenSteps);
-// };
+var BlinkyDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('blinkyDancer')
+};
 
-// BlinkyDancer.prototype = Object.create(Dancer.prototype);
-// BlinkyDancer.prototype.constructor = BlinkyDancer;
+BlinkyDancer.prototype = Object.create(Dancer.prototype);
+BlinkyDancer.prototype.constructor = BlinkyDancer;
 
-// BlinkyDancer.prototype.step = function () {
-//   Dancer.prototype.step.call(this);
-//   this.$node.toggle();
-// };
+BlinkyDancer.prototype.step = function () {
+  Dancer.prototype.step.call(this);
+  this.$node.toggle();
+};
 
 
-class BlinkyDancer extends Dancer {
-  constructor(top, left, timeBetweenSteps) {
-    super(top, left, timeBetweenSteps);    
-  }
-  step() {
-    Dancer.prototype.step.call(this);
-    this.$node.toggle();
-  }
-  makeALine(index) {
-    this.setPosition((index * 10) + 50, 50);
-  }
-  split(index) {
-    this.setPosition(((index) * 10) + 50, 1000);
-  }
-}  
+// class BlinkyDancer extends Dancer {
+//   constructor(top, left, timeBetweenSteps) {
+//     super(top, left, timeBetweenSteps);    
+//   }
+//   step() {
+//     Dancer.prototype.step.call(this);
+//     this.$node.toggle();
+//   }
+
+// }  
 
 
 

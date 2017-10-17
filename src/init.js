@@ -1,10 +1,25 @@
+/* TODO: 
+  - add two dancer classes
+  - add links for them in top bar
+  - add tests for said dancers
+  
+  - add color for unique dancers
+  - make them move in different ways
+  - make them different sizes
+  - not circles
+  - maybe rotation?
+  - make dancers react to mouseover
+
+
+*/
+
 $(document).ready(function() {
   window.dancers = [];
 
   $('.makeALine').on('click', function(event) {
     // let makeALine = $(this).data('makeALine');
     
-    let setPositionAsLine = function() {
+    var setPositionAsLine = function() {
       window.dancers.forEach(function(dancer, index) {
         dancer.setPosition((index * 10) + 50, 50);
       });
@@ -19,17 +34,11 @@ $(document).ready(function() {
     //    if index is even
     //      set position to right side
     //.   else put it on left side
-    let border = 50;
+    var border = 50;
     
-    let doingTheSplits = function() {
+    var doingTheSplits = function() {
       window.dancers.forEach(function(dancer, index) {
-        
-        if (index % 2 === 0) {
-          dancer.makeALine(index);
-          // dancer.setPosition(((index + 1) * 10) + border, 1000);
-        } else {
-          dancer.setPosition((index * 10) + border, 150);
-        }
+        dancer.split(index);
       });
     };
     
@@ -51,14 +60,14 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
-    let dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
-    let dancerMakerFunction = window[dancerMakerFunctionName];
+    var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
 
-    let dancer = new BlinkyDancer(
+    var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
