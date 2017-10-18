@@ -8,15 +8,15 @@
   
 // }
 
-var GrumpyDancer = function(top, left, timeBetweenSteps) {
+var BouncyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps); 
   this.$node.addClass('veggies'); 
 };
 
-GrumpyDancer.prototype = Object.create(Dancer.prototype);
-GrumpyDancer.prototype.constructor = GrumpyDancer;
+BouncyDancer.prototype = Object.create(Dancer.prototype);
+BouncyDancer.prototype.constructor = BouncyDancer;
 
-GrumpyDancer.prototype.step = function() {
+BouncyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  this.$node.toggle('bounce');
+  // this.$node.toggle('bounce');
 };

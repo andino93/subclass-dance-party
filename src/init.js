@@ -45,6 +45,9 @@ $(document).ready(function() {
     doingTheSplits();
   });
   
+  $('body').on('mouseover', 'span', function(event) {
+    $(this).toggleClass('rotation');
+  });
   
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer

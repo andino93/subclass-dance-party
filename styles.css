@@ -3,12 +3,13 @@ body, html{
 }
 body{
   margin: 0px;
-  background-image: url('kitchen.jpg');
+  background-image: url('background image.jpg');
   background-color: black;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   font-size: 18px;
+  overflow: hidden;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -34,33 +35,39 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .blinkyDancer {
-  width: 0px;
-  height: 0px;
-  border-right: 60px solid transparent;
-  border-top: 60px solid yellow;
-  border-left: 60px solid yellow;
-  border-bottom: 60px solid yellow;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 60px;
-  border-bottom-left-radius: 60px;
-  border-bottom-right-radius: 60px;
-  
+  background: url('pacman.png');
+  height: 5em;
+  width: 5em;
+  background-size: 100% 100%
+  border: 1px solid white;
+  background-size: contain;
   
 }
 
 .veggies {
-  display:block;
-  width: 60px;
-  height: 90px;
-  background-color: green;
-  -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
-  border-radius: 50%  50%  50%  50%  / 60%   60%   40%  40%;
+  background: url('yoshiegg.png') no-repeat 0 0;
+  height: 5em;
+  width: 5em;
+  background-size: 100% 100%
+  border: 1px solid white;
+  background-size: contain;
+  animation: bounce 1s infinite;
+}
+
+.marioMushroom {
+  background: url('Mushroom.png') no-repeat 0 0;
+  height: 5em;
+  width: 5em;
+  background-size: 100% 100%
+  border: 1px solid white;
+  background-size: contain;
 }
 
 .relative {
   width: 1000px;
   position: relative;
 }
+
 .bounce {
   position: absolute;
   top: 0;
@@ -70,13 +77,30 @@ body, a:link, a:visited, a:active{
   animation-direction: alternate;
   animation-timing-function: linear;
 }
+
+
 @keyframes bounce {
-  from {
-    padding-top: 0px;
+  0% { margin-top: 9em;  height: 4.5em; }
+  10% { height: 4em }
+  15% { height: 4.5em }
+  50% { margin-top: 0em; height: 4.5em;}
+  100% { margin-top: 9em; height: 4.5em; }
   }
 
-  to {
-    padding-top: 20px;
+
+
+.rotation {
+  animation: rotation: 2s 2 linear;
+  -webkit-animation: rotation 2s 2 linear;
+  height: 5em;
+  width: 5em;
+}
+
+@keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
     }
-  }
-
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}

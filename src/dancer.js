@@ -53,16 +53,25 @@ Dancer.prototype.setPosition = function(top, left) {
 };
 
 Dancer.prototype.makeALine = function(index) {
-  this.setPosition((index * 10) + 50, 50);
+  this.setPosition((index * 20) + 50, 50);
 };
   
 Dancer.prototype.split = function(index) {
   if (index % 2 === 0) {
-    this.setPosition((index * 10) + 50, 50);
+    this.setPosition((index * 20) + 50, 50);
   } else {
-    this.setPosition((index * 10) + 50, 500);
+    this.setPosition((index * 20) + 50, $(window).width() - 100);
   }
 };
+
+Dancer.prototype.onMouseover = function() {
+  // do some animation
+  console.log('mouse');
+  // this.$node.addClass('rotate');
+  
+  // set time out => this.step.bind(this)
+};
+
 // class Dancer {
 //   constructor(top, left, timeBetweenSteps) {
 //     this.$node = $('<span class="dancer"></span>');
