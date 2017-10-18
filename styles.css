@@ -78,6 +78,9 @@ body, a:link, a:visited, a:active{
   animation-timing-function: linear;
 }
 
+.hidden {
+  visibility: hidden;
+}
 
 @keyframes bounce {
   0% { margin-top: 9em;  height: 4.5em; }

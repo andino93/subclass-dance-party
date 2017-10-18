@@ -13,9 +13,30 @@
 
 */
 
-$(document).ready(function() {
-  window.dancers = [];
 
+
+$(document).ready(function() {
+  window.dancers = [];  
+  
+  var isCollision = function() {
+    window.dancers.forEach(function(dancerObj) {
+      window.dancers.forEach(function(targetObj, index) {
+        var isBouncy = targetObj instanceof BouncyDancer;
+        var isMushroom = targetObj instanceof MarioMushroom;
+        var isSameVert = Math.floor(dancerObj.left) === Math.floor(targetObj.left);
+        var isSameHeight = Math.floor(dancerObj.top) === Math.floor(targetObj.top);
+      
+        if ((isBouncy || isMushroom) && isSameHeight && isSameVert) {
+          console.log('+dancer', dancerObj, '+target', targetObj);
+          targetObj.$node.toggleClass('hidden');
+        }
+      });
+    });
+    // isCollision();
+  };
+  
+  setTimeout(isCollision, 5000);
+  
   $('.makeALine').on('click', function(event) {
     // let makeALine = $(this).data('makeALine');
     
